@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon";
+
+import { socialLinks } from "../data/social";
+---
+
+<section id="ourTeam">
+  <div class="w-full sm:mb-7">
+    <h1 class="w-full text-4xl font-bold tracking-wide sm:text-7xl">
+      Our Team 🤝
+    </h1>
+    <p class="w-full p-6 text-lg dark:text-dimWhite sm:text-2xl">
+      The Team Who Won the War and Submitted Before the Deadline
+    </p>
+  </div>
+  <!-- Team Box -->
+  <div
+    class="ourTeamBox flex max-w-sm cursor-pointer flex-col justify-between rounded-3xl px-5 py-12 transition-colors duration-300 ease-in-out hover:text-neutral-200 dark:hover:text-neutral-900 sm:p-16"
+  >
+    <!-- Quotes SVG -->
+    <svg viewBox="0.398438 0 42.6 27.6" class="h-10 w-10 fill-current">
+      <path
+        d="M11.7984 27.6L18.9984 0H12.3984L0.398438 27.6H11.7984ZM35.7984 27.6L42.9984 0H36.3984L24.3984 27.6H35.7984Z"
+      >
+      </path>
+    </svg>
+    <!--Box Text -->
+    <p class="my-4 text-lg font-normal leading-8">
+      Making This Website Was a <br />
+      Roller Coaster of Emotions.
+    </p>
+    <!-- Image, Name, Social Links Container -->
+    <div class="flex flex-row">
+      <img
+        src="/images/pfp.jpg"
+        alt="A Picture of Me :)"
+        class="h-12 w-12 rounded-full"
+      />
+      <div class="ml-4 flex flex-col">
+        <span class="text-xl font-semibold leading-8">Khalil Melhem</span>
+        <div class="mt-1 flex gap-x-3">
+          {
+            socialLinks.map((link) => {
+              return (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.aria}
+                  class="transition duration-0 ease-in-out hover:scale-125"
+                >
+                  <Icon name={link.type} class="h-5 w-5" />
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ourTeamBox:hover {
+    @apply bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-800
+ via-gray-900 to-black dark:bg-gradient-to-t dark:from-slate-300 dark:to-slate-300;
+  }
+</style>

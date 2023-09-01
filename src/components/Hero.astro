@@ -1,0 +1,24 @@
+---
+import { navLinks } from "../data/nav";
+
+import DarkMode from "./ui/DarkMode.astro";
+---
+
+<section class="gap-y-9 px-5">
+  <!-- it really is "my", but for the aesthetic -->
+  <h1 class="text-4xl font-bold sm:text-7xl">Welcome to Our Website!</h1>
+  <p class="text-xl font-bold sm:text-3xl">
+    This Is Our Submission for the CIS 201 Semester Project 🎓
+  </p>
+  <ul class="text-xl font-bold sm:flex sm:text-2xl">
+    {
+      navLinks.map((link) => (
+        <li class="p-3 transition duration-200 ease-in-out hover:scale-110">
+          <a href={link.href}>{link.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <!-- Dark Mode Toggle Button -->
+  <DarkMode Style="h-11 w-11" />
+</section>

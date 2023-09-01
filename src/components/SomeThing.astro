@@ -1,0 +1,35 @@
+---
+import { smthBoxes } from "../data/smth";
+---
+
+<section id="someThing">
+  <h1 class="mb-3 w-full text-4xl font-bold tracking-wide sm:text-7xl">
+    SomeThing 🤔:
+  </h1>
+  <hr
+    class="my-2 h-2 w-60 rounded-3xl border-none bg-gray-400 dark:bg-gray-700 sm:w-96"
+  />
+  <div class="grid gap-5 p-10 md:grid-cols-3">
+    {
+      smthBoxes.map((smthBox) => (
+        <div class="smthBox">
+          <div class="w-full text-2xl font-semibold">{smthBox.title}</div>
+          <p class="font-medium leading-7">{smthBox.description}</p>
+          <button class="smthButton transition duration-300 ease-in-out hover:scale-110">
+            {smthBox.buttonText}
+          </button>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .smthBox {
+    @apply flex flex-col items-center space-y-8 rounded-3xl bg-gray-400 p-6 shadow-smthBox dark:bg-gray-700 dark:shadow-slate-300;
+  }
+
+  .smthButton {
+    @apply rounded-full bg-slate-100 px-8 py-4 font-semibold shadow-smthButton dark:bg-gray-800 dark:shadow-slate-400;
+  }
+</style>
