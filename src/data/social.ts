@@ -7,8 +7,8 @@ type socialLink = {
 export const socialLinks: Array<socialLink> = [
   {
     type: "fa:twitter",
-    href: "https://twitter.com/g9wz_",
-    aria: "Check out my Twitter account",
+    href: "https://x.com/iKhalilM",
+    aria: "Check out my X account",
   },
   {
     type: "fa:github",
